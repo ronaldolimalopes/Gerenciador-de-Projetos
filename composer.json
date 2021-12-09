@@ -1,0 +1,19 @@
+{
+    "name": "ronaldolimalopes/son-framework",
+    "autoload": {
+        "psr-4": {
+            "SON\\Framework\\": "src",
+            "App\\": "app"
+        }
+    },
+    "authors": [{
+        "name": "Ronaldo Lopes",
+        "email": "ronaldolimalopes@hotmail.com"
+    }],
+    "require": {
+        "pimple/pimple": "^3.5"
+    },
+    "scripts": {
+        "server": "php -S localhost:8000 -t public"
+    }
+}
