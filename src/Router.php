@@ -20,8 +20,7 @@ class Router
 
     public function getCurrentUrl()
     {
-        $url = $_SERVER['PATH_INFO'] ?? "/";
-
+        $url = $_SERVER['REQUEST_URI'] ?? "/"; 
         if(strlen($url) > 1){
             $url = rtrim($url, '/'); 
         }
@@ -35,13 +34,14 @@ class Router
 
         $method = strtolower($_SERVER['REQUEST_METHOD']);
 
+        
         if(empty($this->routes[$method])){
             throw new HttpException("Page not Found", 404);
         }
-
+        
         foreach($this->routes[$method] as $route => $action){
             if(preg_match($route, $url, $params)){
-                return $action($params);
+                return compact('action', 'params');
             }
         }
         throw new HttpException("Page not Found", 404);
