@@ -5,17 +5,10 @@ use App\Models\User;
 
 class UserController
 {
-    private $container;
-    
-    public function __construct($container)
+    public function show($container, $params)
     {
-        $this->container = $container;
-    }
-
-    public function show($id)
-    {
-        $user = new User($this->container);
-        var_dump($user->get($id));
-        echo "Estamos na homePage";
+        $user = new User($container);
+        var_dump($user->get($params[1]));
+        //echo "Estamos na homePage";
     }
 }
