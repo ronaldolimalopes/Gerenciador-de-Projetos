@@ -4,6 +4,10 @@ use Pimple\Container;
 
 $container = new Container();
 
+$container['events'] = function(){
+    return new \Zend\EventManager\EventManager;
+};
+
 $container['db'] = function(){
     
     $cdn = 'mysql:host=172.19.0.2;dbname=db_gerenciador';
