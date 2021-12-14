@@ -8,6 +8,7 @@ $router = new SON\Framework\Router;
 require __DIR__.'/config/routes.php';
 
 try {
+    //retorno compact('action', 'params')
     $result = $router->run();
     
     $response = new \SON\Framework\Response;

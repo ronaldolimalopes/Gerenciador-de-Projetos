@@ -11,7 +11,8 @@
         "email": "ronaldolimalopes@hotmail.com"
     }],
     "require": {
-        "pimple/pimple": "^3.5"
+        "pimple/pimple": "^3.5",
+        "symfony/http-foundation": "^5.4"
     },
     "scripts": {
         "server": "php -S localhost:8000 -t public"
